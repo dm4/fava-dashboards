@@ -47,6 +47,10 @@ export async function echarts(ctx: PanelCtx, elem: HTMLDivElement) {
         chart.on("dblclick", (options as any).onDblClick);
         delete options.onDblClick;
     }
+    if (options.onLegendSelectChanged) {
+        chart.on("legendselectchanged", (options as any).onLegendSelectChanged);
+        delete options.onLegendSelectChanged;
+    }
     chart.setOption(options);
 }
 
